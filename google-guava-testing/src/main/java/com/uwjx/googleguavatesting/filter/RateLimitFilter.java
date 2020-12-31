@@ -2,6 +2,7 @@ package com.uwjx.googleguavatesting.filter;
 
 import com.google.common.util.concurrent.RateLimiter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -21,6 +22,7 @@ import java.util.Arrays;
  */
 @Component
 @Slf4j
+@Order(1)
 public class RateLimitFilter extends OncePerRequestFilter {
 
     private RateLimiter rateLimiter = RateLimiter.create(1);

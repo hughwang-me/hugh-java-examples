@@ -9,4 +9,5 @@ import org.springframework.data.repository.CrudRepository;
  * @date 2020/12/30 23:20
  */
 public interface UserRepository extends CrudRepository<UserEntity , Long> {
+    UserEntity findByUsername(String username);
 }
